@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MessenJ</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+<!-- ==============================
+     CONNEXION / INSCRIPTION
+     ============================== -->
+
+<section id="auth-section">
+
+    <div class="auth-card">
+
+        <div class="brand-logo">
+            <span>M</span>
+        </div>
+
+        <h1>MessenJ</h1>
+
+        <p class="auth-subtitle">
+            Bienvenue sur MessenJ
+        </p>
+
+        <div class="input-group">
+
+            <label for="email">
+                Adresse e-mail
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Entrez votre e-mail"
+                autocomplete="email"
+            >
+
+        </div>
+
+        <div class="input-group">
+
+            <label for="password">
+                Mot de passe
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Entrez votre mot de passe"
+                autocomplete="current-password"
+            >
+
+        </div>
+
+        <div class="auth-buttons">
+
+            <button
+                id="login-btn"
+                class="primary-button"
+                type="button"
+            >
+                Se connecter
+            </button>
+
+            <button
+                id="signup-btn"
+                class="secondary-button"
+                type="button"
+            >
+                Créer un compte
+            </button>
+
+        </div>
+
+        <p id="auth-message"></p>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     PAGE D'ACCUEIL
+     ============================== -->
+
+<section
+    id="app"
+    style="display: none;"
+>
+
+    <div class="welcome-box">
+
+        <div class="welcome-icon">
+            💬
+        </div>
+
+        <h1>MessenJ</h1>
+
+        <p>
+            Bienvenue sur MessenJ
+        </p>
+
+        <button
+            id="startButton"
+            class="primary-button"
+            type="button"
+        >
+            Commencer
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     MESSAGERIE
+     ============================== -->
+
+<main
+    id="messenger"
+    style="display: none;"
+>
+
+    <!-- HEADER -->
+
+    <header class="messenger-header">
+
+        <div class="header-brand">
+
+            <div class="header-icon">
+                💬
+            </div>
+
+            <div>
+
+                <h2>MessenJ</h2>
+
+                <span>
+                    Messagerie
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOUTON PROFIL -->
+
+        <button
+            id="profileButton"
+            class="profile-button"
+            type="button"
+        >
+            👤 Profil
+        </button>
+
+
+        <!-- BOUTON DÉCONNEXION -->
+
+        <button
+            id="logoutButton"
+            class="logout-button"
+            type="button"
+        >
+            Déconnexion
+        </button>
+
+    </header>
+
+
+    <!-- ==============================
+         PROFIL UTILISATEUR
+         ============================== -->
+
+    <section
+        id="profile-section"
+        style="display: none;"
+    >
+
+        <div class="profile-card">
+
+            <div class="profile-avatar">
+
+                <img
+                    id="profile-avatar-image"
+                    src=""
+                    alt="Photo de profil"
+                    style="display: none;"
+                >
+
+                👤
+
+            </div>
+
+
+            <input
+                type="file"
+                id="avatar-input"
+                accept="image/*"
+            >
+
+
+            <h2>
+                Mon profil
+            </h2>
+
+
+            <div class="input-group">
+
+                <label for="username">
+                    Nom d'utilisateur
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Entrez votre nom d'utilisateur"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="full-name">
+                    Nom complet
+                </label>
+
+                <input
+                    type="text"
+                    id="full-name"
+                    placeholder="Entrez votre nom complet"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="bio">
+                    Bio
+                </label>
+
+                <textarea
+                    id="bio"
+                    placeholder="Parlez un peu de vous..."
+                    rows="4"
+                ></textarea>
+
+            </div>
+
+
+            <button
+                id="save-profile-button"
+                class="primary-button"
+                type="button"
+            >
+                Enregistrer le profil
+            </button>
+
+
+            <button
+                id="close-profile-button"
+                class="secondary-button"
+                type="button"
+            >
+                Retour
+            </button>
+
+
+            <p id="profile-message"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         STATUTS
+         ============================== -->
+
+    <section id="status-section">
+
+        <div class="status-card">
+
+            <!-- HEADER STATUT -->
+
+            <div class="status-header">
+
+                <div class="status-title">
+
+                    <div class="status-icon">
+                        📸
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Statuts
+                        </h2>
+
+                        <p>
+                            Partagez ce que vous faites
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================
+                 PUBLIER UN STATUT
+                 ============================== -->
+
+            <div class="status-publisher">
+
+                <textarea
+                    id="status-input"
+                    placeholder="Quoi de neuf ?"
+                    rows="3"
+                ></textarea>
+
+
+                <div class="status-media-actions">
+
+                    <label
+                        for="status-media-input"
+                        class="status-media-button"
+                    >
+                        📷 🎥 Ajouter une photo ou une vidéo
+                    </label>
+
+                    <input
+                        type="file"
+                        id="status-media-input"
+                        accept="image/*,video/*"
+                        hidden
+                    >
+
+                </div>
+
+
+                <!-- PREVIEW MÉDIA -->
+
+                <div
+                    id="status-media-preview"
+                    class="status-media-preview"
+                    style="display: none;"
+                >
+
+                    <img
+                        id="status-image-preview"
+                        alt="Aperçu de la photo"
+                        style="display: none;"
+                    >
+
+
+                    <video
+                        id="status-video-preview"
+                        controls
+                        playsinline
+                        style="display: none;"
+                    ></video>
+
+
+                    <button
+                        id="remove-status-media"
+                        type="button"
+                        class="remove-status-media"
+                    >
+                        ✕ Supprimer
+                    </button>
+
+                </div>
+
+
+                <div class="status-publisher-bottom">
+
+                    <span class="status-media-info">
+                        📷 Photo · 🎥 Vidéo
+                    </span>
+
+
+                    <button
+                        id="publish-status-button"
+                        class="primary-button"
+                        type="button"
+                    >
+                        Publier
+                    </button>
+
+                </div>
+
+
+                <p id="status-message"></p>
+
+            </div>
+
+
+            <!-- ==============================
+                 LISTE DES STATUTS
+                 ============================== -->
+
+            <div class="statuses-list">
+
+                <div class="statuses-list-header">
+
+                    <h3>
+                        Statuts récents
+                    </h3>
+
+                    <p>
+                        Découvrez les dernières publications
+                    </p>
+
+                </div>
+
+
+                <div id="statuses"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         CONVERSATIONS
+         ============================== -->
+
+    <section id="users-section">
+
+        <div class="section-title">
+
+            <div>
+
+                <h3>
+                    Conversations
+                </h3>
+
+                <p>
+                    Choisir une conversation
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div id="users-list"></div>
+
+    </section>
+
+
+    <!-- ==============================
+         MESSAGES
+         ============================== -->
+
+    <section id="messages">
+
+        <div class="empty-message">
+
+            <div class="empty-icon">
+                💬
+            </div>
+
+            <strong>
+                Choisir une conversation
+            </strong>
+
+            <span>
+                Sélectionnez une conversation
+                pour commencer.
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         ZONE D'ÉCRITURE
+         ============================== -->
+
+    <div class="message-form">
+
+        <input
+            type="text"
+            id="messageInput"
+            placeholder="Écrire un message..."
+            autocomplete="off"
+        >
+
+
+        <button
+            id="sendButton"
+            aria-label="Envoyer"
+            type="button"
+        >
+            ➤
+        </button>
+
+    </div>
+
+</main>
+
+
+<!-- ==============================
+     SUPABASE
+     ============================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<!-- ==============================
+     JAVASCRIPT
+     ============================== -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+
+
+
